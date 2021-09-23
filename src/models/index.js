@@ -2,10 +2,16 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
+const UserType = {
+  "STUDENT": "STUDENT",
+  "TEACHER": "TEACHER"
+};
 
-
-const { Todo } = initSchema(schema);
+const { Timeline, User, Todo } = initSchema(schema);
 
 export {
-  Todo
+  Timeline,
+  User,
+  Todo,
+  UserType
 };

@@ -1,26 +1,26 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-oshiyell-dev-120338-authRole",
-            "UnauthRoleArn": "arn:aws:iam::958426497386:role/amplify-oshiyell-dev-120338-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::958426497386:role/amplify-oshiyell-dev-120338-authRole",
-            "Region": "ap-northeast-1",
-            "DeploymentBucketName": "amplify-oshiyell-dev-120338-deployment",
-            "UnauthRoleName": "amplify-oshiyell-dev-120338-unauthRole",
-            "StackName": "amplify-oshiyell-dev-120338",
-            "StackId": "arn:aws:cloudformation:ap-northeast-1:958426497386:stack/amplify-oshiyell-dev-120338/dba2f4e0-1c1a-11ec-a2ba-0a6a76f1d5fd",
-            "AmplifyAppId": "dt686aw93qvxt"
-        },
-        "categories": {
-            "auth": {
-                "oshiyella1b3dade": {}
-            },
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "dt686aw93qvxt",
-                    "type": "manual"
-                }
-            }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-oshiyell-dev-120338-authRole",
+      "UnauthRoleArn": "arn:aws:iam::958426497386:role/amplify-oshiyell-dev-120338-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::958426497386:role/amplify-oshiyell-dev-120338-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-oshiyell-dev-120338-deployment",
+      "UnauthRoleName": "amplify-oshiyell-dev-120338-unauthRole",
+      "StackName": "amplify-oshiyell-dev-120338",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:958426497386:stack/amplify-oshiyell-dev-120338/dba2f4e0-1c1a-11ec-a2ba-0a6a76f1d5fd",
+      "AmplifyAppId": "dt686aw93qvxt"
+    },
+    "categories": {
+      "auth": {
+        "oshiyella1b3dade": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dt686aw93qvxt",
+          "type": "manual"
         }
+      }
     }
+  }
 }

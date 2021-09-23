@@ -1,47 +1,57 @@
-import { DataStore } from '@aws-amplify/datastore';
-import React, { useEffect } from 'react';
-import { Todo } from './models';
+import { DataStore } from "@aws-amplify/datastore";
+import React, { useEffect } from "react";
+import { Todo } from "./models";
+import Input from "@mui/material/Input";
+import { Button, InputAdornment, TextField } from "@mui/material";
 
 const Todos = () => {
   const [todos, setTodos] = React.useState<Todo[]>([]);
   const [title, setTitle] = React.useState<string>("");
 
-  useEffect(()=>{
-    DataStore.query(Todo).then((res)=>{
-      setTodos(res)
+  useEffect(() => {
+    DataStore.query(Todo).then((res) => {
+      setTodos(res);
     });
 
-    const subscription = DataStore.observe(Todo).subscribe(msg => {
-      DataStore.query(Todo).then((res)=>{
-        setTodos(res)
+    const subscription = DataStore.observe(Todo).subscribe((msg) => {
+      DataStore.query(Todo).then((res) => {
+        setTodos(res);
       });
     });
 
-    return ()=>{subscription.unsubscribe()}
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
 
-  },[])
-
-
-
-  return <div>
-    <input onChange={(event)=>{
-      setTitle(event.target.value)
-    }}/>
-    <button onClick={(event)=>{
-      DataStore.save(
-        new Todo({
-          name: title
-        })
-      );
-    }}>
-      sakusei
-    </button>
+  return (
     <div>
-      {title}
+      <TextField
+        label="With normal TextField"
+        id="outlined-start-adornment"
+        sx={{ m: 1, width: "25ch" }}
+        InputProps={{
+          startAdornment: <InputAdornment position="start">kg</InputAdornment>,
+        }}
+        onChange={(event) => {
+          setTitle(event.target.value);
+        }}
+      />
+
+      <Button variant="contained" onClick={(event) => {
+          DataStore.save(
+            new Todo({
+              name: title,
+            })
+          );
+        }}>作成</Button>
+    
+      <div>{title}</div>
+      {todos.map((todo) => {
+        return <p>{todo.name}</p>;
+      })}
     </div>
-    {todos.map((todo)=>{
-    return <p>{todo.name}</p>
-  })}</div>  
+  );
 };
 
-export default Todos
+export default Todos;
