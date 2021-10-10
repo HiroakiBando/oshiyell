@@ -13,6 +13,7 @@ import UserForm from "./UserForm";
 import { User } from "./models";
 import Teachers from "./Teachers";
 import Students from "./Students";
+import Header from "./Header";
 
 Amplify.configure(awsconfig);
 
@@ -44,6 +45,8 @@ const App = () => {
     if (appUser) {
       return (
         <div>
+          <Header />
+          <Todos />
           <Teachers />
           <Students />
           <AmplifySignOut />
