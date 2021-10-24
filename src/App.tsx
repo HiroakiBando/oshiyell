@@ -14,6 +14,7 @@ import { User } from "./models";
 import Teachers from "./Teachers";
 import Students from "./Students";
 import Header from "./Header";
+import './App.css';
 
 Amplify.configure(awsconfig);
 
@@ -46,7 +47,9 @@ const App = () => {
       return (
         <div>
           <Header />
-          <Todos />
+          <div className="list">
+            <Todos />
+          </div>
           <Teachers />
           <Students />
           <AmplifySignOut />
